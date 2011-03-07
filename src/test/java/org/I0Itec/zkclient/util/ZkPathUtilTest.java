@@ -17,7 +17,7 @@ package org.I0Itec.zkclient.util;
 
 import junit.framework.TestCase;
 
-import org.I0Itec.zkclient.TestUtil;
+import org.I0Itec.zkclient.testutil.TestUtil;
 import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.ZkServer;
 

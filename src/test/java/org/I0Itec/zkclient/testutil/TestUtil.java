@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.I0Itec.zkclient;
+package org.I0Itec.zkclient.testutil;
 
 import static org.mockito.Mockito.mock;
 
@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
+import org.I0Itec.zkclient.IDefaultNameSpace;
+import org.I0Itec.zkclient.ZkServer;
 import org.apache.commons.io.FileUtils;
 import org.mockito.exceptions.base.MockitoAssertionError;
 

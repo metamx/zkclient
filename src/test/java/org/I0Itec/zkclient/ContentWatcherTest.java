@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
+import org.I0Itec.zkclient.testutil.TestUtil;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;

@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 
+import org.I0Itec.zkclient.testutil.TestUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

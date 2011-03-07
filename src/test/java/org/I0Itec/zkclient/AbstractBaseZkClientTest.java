@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.I0Itec.zkclient.exception.ZkTimeoutException;
+import org.I0Itec.zkclient.testutil.TestUtil;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
