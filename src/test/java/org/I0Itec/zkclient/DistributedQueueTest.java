@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 
-import org.I0Itec.zkclient.testutil.TestUtil;
+import org.I0Itec.zkclient.testutil.TheUtilForTesting;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +38,7 @@ public class DistributedQueueTest {
 
     @Before
     public void setUp() throws IOException {
-        _zkServer = TestUtil.startZkServer("ZkClientTest-testDistributedQueue", 4711);
+        _zkServer = TheUtilForTesting.startZkServer("ZkClientTest-testDistributedQueue", 4711);
         _zkClient = _zkServer.getZkClient();
     }
 

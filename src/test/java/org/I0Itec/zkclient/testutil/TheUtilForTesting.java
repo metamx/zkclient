@@ -27,7 +27,8 @@ import org.I0Itec.zkclient.ZkServer;
 import org.apache.commons.io.FileUtils;
 import org.mockito.exceptions.base.MockitoAssertionError;
 
-public class TestUtil {
+public class TheUtilForTesting
+{
 
     /**
      * This waits until the provided {@link Callable} returns an object that is equals to the given expected value or

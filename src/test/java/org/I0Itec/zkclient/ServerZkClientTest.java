@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.I0Itec.zkclient.exception.ZkBadVersionException;
 import org.I0Itec.zkclient.exception.ZkInterruptedException;
 import org.I0Itec.zkclient.exception.ZkNoNodeException;
-import org.I0Itec.zkclient.testutil.TestUtil;
+import org.I0Itec.zkclient.testutil.TheUtilForTesting;
 import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.data.Stat;
 import org.junit.After;
@@ -43,7 +43,7 @@ public class ServerZkClientTest extends AbstractBaseZkClientTest {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        _zkServer = TestUtil.startZkServer("ZkClientTest_" + _counter.addAndGet(1), 4711);
+        _zkServer = TheUtilForTesting.startZkServer("ZkClientTest_" + _counter.addAndGet(1), 4711);
         _client = new ZkClient("localhost:4711", 5000);
     }
 
@@ -102,7 +102,7 @@ public class ServerZkClientTest extends AbstractBaseZkClientTest {
         LOG.info("--- testRetryUntilConnected_SessionExpiredException");
 
         // Use a tick time of 100ms, because the minimum session timeout is 2 x tick-time.
-        // ZkServer zkServer = TestUtil.startZkServer("ZkClientTest-testSessionExpiredException", 4711, 100);
+        // ZkServer zkServer = TheUtilForTesting.startZkServer("ZkClientTest-testSessionExpiredException", 4711, 100);
         Gateway gateway = new Gateway(4712, 4711);
         gateway.start();
 
@@ -160,7 +160,7 @@ public class ServerZkClientTest extends AbstractBaseZkClientTest {
         Thread.sleep(sessionTimeout * 3);
         gateway.start();
 
-        Boolean hasOneChild = TestUtil.waitUntil(true, new Callable<Boolean>() {
+        Boolean hasOneChild = TheUtilForTesting.waitUntil(true, new Callable<Boolean>() {
 
             @Override
             public Boolean call() throws Exception {

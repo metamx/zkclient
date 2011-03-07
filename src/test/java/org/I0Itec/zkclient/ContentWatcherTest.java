@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-import org.I0Itec.zkclient.testutil.TestUtil;
+import org.I0Itec.zkclient.testutil.TheUtilForTesting;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -37,7 +37,7 @@ public class ContentWatcherTest {
     @Before
     public void setUp() throws Exception {
         LOG.info("------------ BEFORE -------------");
-        _zkServer = TestUtil.startZkServer("ContentWatcherTest", 4711);
+        _zkServer = TheUtilForTesting.startZkServer("ContentWatcherTest", 4711);
         _zkClient = _zkServer.getZkClient();
     }
 
@@ -60,7 +60,7 @@ public class ContentWatcherTest {
         // update the content
         _zkClient.writeData(FILE_NAME, "b");
 
-        String contentFromWatcher = TestUtil.waitUntil("b", new Callable<String>() {
+        String contentFromWatcher = TheUtilForTesting.waitUntil("b", new Callable<String>() {
 
             @Override
             public String call() throws Exception {
@@ -140,7 +140,7 @@ public class ContentWatcherTest {
         final ContentWatcher<String> watcher = new ContentWatcher<String>(zkClient, FILE_NAME);
         watcher.start();
 
-        TestUtil.waitUntil("b", new Callable<String>() {
+        TheUtilForTesting.waitUntil("b", new Callable<String>() {
 
             @Override
             public String call() throws Exception {
